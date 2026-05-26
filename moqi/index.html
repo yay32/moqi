@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>心有灵犀 | 情侣默契测试</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="情侣默契测试">
+        <div class="hero-copy">
+          <p class="eyebrow">Couple Sync Test</p>
+          <h1>心有灵犀</h1>
+          <p class="lead">用一组轻松选择题，看看你们在日常偏好、表达爱意和未来期待里有多同频。</p>
+        </div>
+        <div class="hero-panel" aria-label="测试设置">
+          <p class="panel-note">不用填写答案，按真实相处状态选择即可。</p>
+          <div class="controls-row">
+            <label>
+              <span>题目数</span>
+              <select id="roundCount">
+                <option value="8">8 题</option>
+                <option value="12" selected>12 题</option>
+                <option value="16">16 题</option>
+              </select>
+            </label>
+            <label>
+              <span>题目氛围</span>
+              <select id="categorySelect">
+                <option value="all">混合题</option>
+                <option value="daily">日常偏好</option>
+                <option value="memory">共同回忆</option>
+                <option value="love">表达爱意</option>
+                <option value="future">未来计划</option>
+                <option value="deep">深层理解</option>
+              </select>
+            </label>
+          </div>
+          <button class="primary-btn" id="startBtn" type="button">开始测试</button>
+        </div>
+      </section>
+
+      <section class="quiz-area hidden" id="quizArea" aria-live="polite">
+        <div class="topbar">
+          <div>
+            <p class="eyebrow" id="turnLabel">第 1 题</p>
+            <h2 id="questionTitle">题目加载中</h2>
+          </div>
+          <div class="score-pill">
+            <span id="scoreNow">0</span>
+            <small>当前默契值</small>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <div class="question-card">
+          <div class="question-meta">
+            <span id="categoryTag">日常偏好</span>
+            <span id="roleHint">选择最符合你们的答案</span>
+          </div>
+
+          <div class="choice-list" id="choiceList" aria-label="选择答案"></div>
+        </div>
+      </section>
+
+      <section class="result-area hidden" id="resultArea">
+        <div class="result-card">
+          <p class="eyebrow">Your Result</p>
+          <h2 id="resultTitle">默契结果</h2>
+          <p id="resultText"></p>
+          <div class="result-meter" aria-hidden="true">
+            <span id="resultMeter"></span>
+          </div>
+          <div class="result-actions">
+            <button class="primary-btn" id="restartBtn" type="button">再测一轮</button>
+            <button class="secondary-btn" id="newSetBtn" type="button">换一组题</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js?v=choices"></script>
+  </body>
+</html>
